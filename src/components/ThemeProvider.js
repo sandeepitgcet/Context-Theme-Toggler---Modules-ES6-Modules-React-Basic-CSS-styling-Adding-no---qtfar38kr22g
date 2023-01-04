@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react';
 const ThemeContext = React.createContext()
 const ThemeChangeContext = createContext()
 const ThemeProvider = (props) =>{
-    const [theme, setTheme] = useState("dark");
+    const [theme, setTheme] = useState("light");
 
     const changeThemeHandler = () => {
         console.log("changing theme from "+theme);
