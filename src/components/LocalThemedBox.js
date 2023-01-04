@@ -14,7 +14,7 @@ return(
     <div  className={"bg-"+theme} style={{width:'200px',height:'200px',border:'2px solid green'}} id="local-themed-box">
         {/* Write code below this line */}
         <LocalThemeContext.Provider value={theme}>
-        <p className={"txt-"+theme}>THis is my Text</p>
+        <p className={"txt-"+theme} id="local-themed-text-container">THis is my Text</p>
        <button className={"btn btn-"+theme}id="local-themed-text-container" onClick={changeLocalTheme}>Toggle local theme to {theme==='dark'?'light':'dark'}</button>
         </LocalThemeContext.Provider>
        
