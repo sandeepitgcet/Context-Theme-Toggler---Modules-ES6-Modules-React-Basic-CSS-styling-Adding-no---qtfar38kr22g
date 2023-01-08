@@ -9,7 +9,7 @@ const Page = () => {
             <p className={"txt-"+theme} id="themed-text-container">
                 lorem ipsum dolor iterit n stuff
             </p>
-            <button className={"btn btn-"+theme} id="themed-button">Themed Button</button>
+            <button className={"btn btn-"+theme+"txt-"+theme} id="themed-button">Themed Button</button>
             <LocalThemedBox />
         </div>
     )
