@@ -6,7 +6,7 @@ const ThemeToggleButton = () =>{
     const [theme,changeThemeHandler] = useContext(ThemeContext)
     return (
        <>
-        <button className={"btn btn-"+theme+" txt-"+theme} id="global-theme-toggler" onClick={changeThemeHandler}>Toggle local theme to {theme==='dark'?'light':'dark'}</button>
+        <button className={"btn btn-"+theme+" txt-"+theme} id="global-theme-toggler" onClick={changeThemeHandler}>Switch to {theme==='dark'?'light':'dark'} theme</button>
        </>
     )
 
