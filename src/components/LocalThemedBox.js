@@ -1,23 +1,22 @@
-import React, { createContext, useContext, useState } from 'react';
-import { ThemeChangeContext, ThemeContext } from './ThemeProvider';
+import React, { useContext, useEffect, useState } from 'react';
+import { ThemeContext } from './ThemeProvider';
 
 
 const LocalThemedBox = () => {
-const globalTheme = useContext(ThemeContext);
-const LocalThemeContext = createContext();
-const [theme,setTheme] = useState(globalTheme);
+    const theme = useContext(ThemeContext)
+const [localTheme,setLocalTheme] = useState(theme);
+
+useEffect(()=>{
+    setLocalTheme(theme)
+},[theme])
 
 const changeLocalTheme = () => {
-    setTheme(theme==='dark'?"light":"dark")
+    setLocalTheme(localTheme=='dark'?"light":"dark")
 }
 return(
-    <div  className={"bg-"+theme} style={{width:'200px',height:'200px',border:'2px solid green'}} id="local-themed-box">
-        {/* Write code below this line */}
-        <LocalThemeContext.Provider value={theme}>
-        <p className={"txt-"+theme} id="local-themed-text-container">THis is my Text</p>
-       <button className={"btn btn-"+theme}id="local-themed-text-container" onClick={changeLocalTheme}>Toggle local theme to {theme==='dark'?'light':'dark'}</button>
-        </LocalThemeContext.Provider>
-       
+    <div  className={"bg-"+localTheme} style={{width:'200px',height:'200px',border:'2px solid green'}} id="local-themed-box">
+        <p className={"txt-"+localTheme} id="local-themed-text-container">THis is my Text</p>
+        <button className={"btn btn-"+localTheme} id="local-themed-text-container" onClick={changeLocalTheme}>Toggle local theme to {localTheme==='dark'?'light':'dark'}</button>
     </div>
 )
 }

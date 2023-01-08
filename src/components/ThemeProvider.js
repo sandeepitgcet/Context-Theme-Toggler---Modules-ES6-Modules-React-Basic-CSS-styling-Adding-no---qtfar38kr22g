@@ -15,10 +15,8 @@ const ThemeProvider = (props) =>{
     }
     return (
         <React.Fragment>
-            <ThemeContext.Provider value={theme}>
-                <ThemeChangeContext.Provider value={changeThemeHandler}>
+            <ThemeContext.Provider value={[theme,changeThemeHandler]}>
                     {props.children}
-                </ThemeChangeContext.Provider>
             </ThemeContext.Provider>
         </React.Fragment>
     )

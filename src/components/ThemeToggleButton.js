@@ -3,11 +3,10 @@ import { ThemeChangeContext, ThemeContext } from './ThemeProvider';
 
 
 const ThemeToggleButton = () =>{
-    const theme= useContext(ThemeContext)
-    const changeTheme = useContext(ThemeChangeContext)
+    const [theme,changeThemeHandler] = useContext(ThemeContext)
     return (
        <>
-        <button className={"btn btn-"+theme} id="global-theme-toggler" onClick={changeTheme}>Toggle local theme to {theme==='dark'?'light':'dark'}</button>
+        <button className={"btn btn-"+theme} id="global-theme-toggler" onClick={changeThemeHandler}>Toggle local theme to {theme==='dark'?'light':'dark'}</button>
        </>
     )
 

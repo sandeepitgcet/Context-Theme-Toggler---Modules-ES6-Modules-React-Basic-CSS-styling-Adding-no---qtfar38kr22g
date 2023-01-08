@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import { LocalThemedBox } from './LocalThemedBox';
-import { ThemeChangeContext, ThemeContext } from './ThemeProvider';
+import { ThemeContext } from './ThemeProvider';
 
 const Page = () => {
-    const theme = useContext(ThemeContext)
-    const changeTheme = useContext(ThemeChangeContext)
+    const [theme,changeThemeHandler] = useContext(ThemeContext)
     return(
         <div className={"container bg-"+theme} id="themed-page">
             <p className={"txt-"+theme} id="themed-text-container">
